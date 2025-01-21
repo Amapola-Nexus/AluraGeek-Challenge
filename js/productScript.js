@@ -65,23 +65,6 @@ listProduct();
 
 //SEND NEW PRODUCT
 
-const imageInput = document.querySelector('[data-image]');
-const imageFilePicker = document.getElementById('image-file');
-
-let imageDataUrl = '';
-
-imageFilePicker.addEventListener('change', (ev) => {
-    const imageFile = ev.target.files[0];
-    if (imageFile) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            imageDataUrl = e.target.result;
-            imageInput.value = imageFile.name;
-          };
-        reader.readAsDataURL(imageFile)
-    }
-});
-
 const form = document.querySelector('[data-form]');
 
 async function createProduct(event) {
