@@ -36,6 +36,7 @@ export default function createCard(id, title, category, image, price, ramoQuanti
                 try {
                     await connectAPI.deleteProduct(id);
                     product.remove();
+                    alert(`Producto con id ${id} eliminado exitosamente`)
                 }
                 catch (error) {
                     console.error(`Error al eliminar el producto con id ${id}:`, error);
