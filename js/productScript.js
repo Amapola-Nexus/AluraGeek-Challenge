@@ -1,18 +1,5 @@
 import { connectAPI } from "./connectAPI.js";
 
-function deleteProductConfirm(id) {
-    confirm = confirm('Este producto se eliminará')
-    if (confirm == true) {
-        const result = connectAPI.deleteProduct(id);
-
-        if (result) {
-            alert('El producto se ha eliminado exitosamente')
-        } else{
-            alert('Hubo un error al eliminar el producto')
-        }
-    }
-}
-
 //LIST NEW PRODUCT
 
 const list = document.querySelector('[data-list]');
@@ -45,10 +32,18 @@ export default function createCard(id, title, category, image, price, ramoQuanti
     let delBtns = document.querySelectorAll('.product__delete');
 
     delBtns.forEach((buttons) => {
-        buttons.addEventListener('click', (ev) => {
+        buttons.addEventListener('click', async (ev) => {
             let id = ev.target.closest('[data-id]').dataset.id;
 
-            if (id) deleteProductConfirm(id);
+            if (id) {
+                try {
+                    await connectAPI.deleteProduct(id);
+                    product.remove();
+                }
+                catch (error) {
+                    console.error(`Error al eliminar el producto con id ${id}:`, error);
+                }
+            };
         })
     })
 
