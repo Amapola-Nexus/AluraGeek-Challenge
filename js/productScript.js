@@ -3,13 +3,15 @@ import { connectAPI } from "./connectAPI.js";
 async function deleteProductConfirm(id) {
     confirm = confirm('Este producto se eliminará')
     if (confirm == true) {
-        const result = connectAPI.deleteProduct(id);
+        const result = await connectAPI.deleteProduct(id);
 
         if (result) {
             alert('El producto se ha eliminado exitosamente')
         } else{
             alert('Hubo un error al eliminar el producto')
         }
+
+        return result
     }
 }
 
@@ -98,7 +100,9 @@ async function createProduct(event) {
 
     const ramoQuantity = document.querySelector('[data-ramo-quantity]').value;
 
-    await connectAPI.sendNewProduct(title, category, image, price, ramoQuantity)
+    const result = await connectAPI.sendNewProduct(title, category, image, price, ramoQuantity)
+
+    return result
 }
 
 form.addEventListener('submit', event => createProduct(event));
