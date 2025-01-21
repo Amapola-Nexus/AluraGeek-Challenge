@@ -98,6 +98,8 @@ async function createProduct(event) {
 
     const ramoQuantity = document.querySelector('[data-ramo-quantity]').value;
 
+    console.log(title, category, image, price)
+
     try {
         const newProduct = await connectAPI.sendNewProduct(title, category, image, price, ramoQuantity);
         const newCard = createCard(newProduct);
