@@ -120,7 +120,8 @@ body {
     }
     
     .upload-product__container{
-        position: static;
+        position: relative;
+        top: 0;
     }
 }
 
