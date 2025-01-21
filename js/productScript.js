@@ -98,7 +98,7 @@ function createProduct(event) {
 
     const ramoQuantity = document.querySelector('[data-ramo-quantity]').value;
 
-    const result = await connectAPI.sendNewProduct(title, category, image, price, ramoQuantity)
+    connectAPI.sendNewProduct(title, category, image, price, ramoQuantity)
 }
 
 form.addEventListener('submit', event => createProduct(event));
