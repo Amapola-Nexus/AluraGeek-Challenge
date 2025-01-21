@@ -88,6 +88,7 @@ async function createProduct(event) {
 
     event.preventDefault();
 
+    const id = Date.now();
     const title = document.querySelector('[data-title]').value;
     const category = document.querySelector('[data-category]').value;
     const image = imageDataUrl || imageInput.value;
@@ -98,7 +99,7 @@ async function createProduct(event) {
 
     const ramoQuantity = document.querySelector('[data-ramo-quantity]').value;
 
-    console.log(title, category, image, price)
+    console.log(id, title, category, image, price)
 
     try {
         const newProduct = await connectAPI.sendNewProduct(title, category, image, price, ramoQuantity);
