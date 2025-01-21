@@ -103,7 +103,7 @@ async function createProduct(event) {
 
     try {
         const newProduct = await connectAPI.sendNewProduct(id, title, category, image, price, ramoQuantity);
-        const newCard = createCard(newProduct);
+        const newCard = createCard(id, title, category, image, price, ramoQuantity);
         list.appendChild(newCard)
     }
     catch (error) {
