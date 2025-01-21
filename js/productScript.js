@@ -102,7 +102,7 @@ async function createProduct(event) {
     console.log(id, title, category, image, price)
 
     try {
-        const newProduct = await connectAPI.sendNewProduct(title, category, image, price, ramoQuantity);
+        const newProduct = await connectAPI.sendNewProduct(id, title, category, image, price, ramoQuantity);
         const newCard = createCard(newProduct);
         list.appendChild(newCard)
     }
