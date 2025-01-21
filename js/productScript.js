@@ -1,12 +1,14 @@
 import { connectAPI } from "./connectAPI.js";
 
 async function deleteProductConfirm(id) {
-    confirm = confirm('wow confirm is a thing')
+    confirm = confirm('Este producto se eliminará')
     if (confirm == true) {
         const result = connectAPI.deleteProduct(id);
 
         if (result) {
-            console.log('yay')
+            alert('El producto se ha eliminado exitosamente')
+        } else{
+            alert('Hubo un error al eliminar el producto')
         }
     }
 }
