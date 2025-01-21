@@ -1,17 +1,15 @@
 import { connectAPI } from "./connectAPI.js";
 
-async function deleteProductConfirm(id) {
+function deleteProductConfirm(id) {
     confirm = confirm('Este producto se eliminará')
     if (confirm == true) {
-        const result = await connectAPI.deleteProduct(id);
+        const result = connectAPI.deleteProduct(id);
 
         if (result) {
             alert('El producto se ha eliminado exitosamente')
         } else{
             alert('Hubo un error al eliminar el producto')
         }
-
-        return result
     }
 }
 
@@ -86,7 +84,7 @@ imageFilePicker.addEventListener('change', (ev) => {
 
 const form = document.querySelector('[data-form]');
 
-async function createProduct(event) {
+function createProduct(event) {
 
     event.preventDefault();
 
@@ -101,8 +99,6 @@ async function createProduct(event) {
     const ramoQuantity = document.querySelector('[data-ramo-quantity]').value;
 
     const result = await connectAPI.sendNewProduct(title, category, image, price, ramoQuantity)
-
-    return result
 }
 
 form.addEventListener('submit', event => createProduct(event));
