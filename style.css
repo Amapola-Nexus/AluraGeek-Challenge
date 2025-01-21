@@ -118,6 +118,10 @@ body {
         flex-direction: column-reverse;
         align-items: center;
     }
+    
+    .upload-product__container{
+        position: static;
+    }
 }
 
 .product__container {
