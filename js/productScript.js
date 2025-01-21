@@ -29,13 +29,9 @@ export default function createCard(id, title, category, image, price, ramoQuanti
         spanIfCategory.style.display = 'inline-block';
     }
 
-    let delBtns = document.querySelectorAll('.product__delete');
-
-    delBtns.forEach((buttons) => {
-        buttons.addEventListener('click', async (ev) => {
-            let id = ev.target.closest('[data-id]').dataset.id;
-            console.log(id)
-
+    let delBtn = product.querySelector('.product__delete');
+    
+    delBtn.addEventListener('click', async () => {
             if (id) {
                 try {
                     await connectAPI.deleteProduct(id);
@@ -46,7 +42,6 @@ export default function createCard(id, title, category, image, price, ramoQuanti
                 }
             };
         })
-    })
 
     return product;
 }
