@@ -347,4 +347,8 @@ body {
         position: relative;
         top: 0;
     }
+
+    .product__container {
+        justify-content: space-around;
+    }
 }
