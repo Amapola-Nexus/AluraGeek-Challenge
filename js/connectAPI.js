@@ -7,8 +7,9 @@ async function listProduct() {
     return connectionParsed;
 }
 
-async function sendNewProduct(title, category, image, price, ramoQuantity) {
+async function sendNewProduct(id, title, category, image, price, ramoQuantity) {
     let fetchBody = {
+        id: id,
         title: title,
         category: category,
         image: image,
