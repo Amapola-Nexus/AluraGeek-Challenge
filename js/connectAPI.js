@@ -1,5 +1,5 @@
 async function listProduct() {
-    const connection = await fetch("https://alurageek-p2krgo2n8-amapolas-projects.vercel.app/productos", {
+    const connection = await fetch("https://my-json-server.typicode.com/Amapola-Nexus/AluraGeek-Challenge-API/productos", {
         headers:{"Content-type":"application/json"},
     });
     const connectionParsed = await connection.json();
@@ -16,7 +16,7 @@ async function sendNewProduct(title, category, image, price, ramoQuantity) {
         ...(ramoQuantity > 1 ? {ramoQuantity : ramoQuantity} : {})
     }
 
-    const connection = await fetch("https://alurageek-p2krgo2n8-amapolas-projects.vercel.app/productos", {
+    const connection = await fetch("https://my-json-server.typicode.com/Amapola-Nexus/AluraGeek-Challenge-API/productos", {
         method:"POST",
         headers:{"Content-type":"application/json"},
         body:JSON.stringify(fetchBody)
@@ -28,7 +28,7 @@ async function sendNewProduct(title, category, image, price, ramoQuantity) {
 }
 
 async function deleteProduct(id) {
-    const connection = await fetch(`https://alurageek-p2krgo2n8-amapolas-projects.vercel.app/productos/${id}`,{
+    const connection = await fetch(`https://my-json-server.typicode.com/Amapola-Nexus/AluraGeek-Challenge-API/productos/${id}`,{
         method:"DELETE",
         headers:{"Content-type":"application/json"},
     })
