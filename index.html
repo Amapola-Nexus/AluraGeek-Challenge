@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluraGeek Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+    <div class="toast" id="toast">
+        <div class="toast_content">
+            <div class="message">
+                <span class="del_text" id="toast-msg">Producto eliminado</span>
+                <i class="fa-solid fa-x" id="closeBtnToast"></i>
+            </div>
+        </div>
+        <div class="progress" id="progressBar"></div>
+    </div>
+
+    <header class="site-header">
+        <nav>
+            <img class="logo" src="./assets/Logo.svg">
+            <!-- <button class="shopping-toggle"><i class="fa-solid fa-arrow-up-from-bracket"></i></button> -->
+        </nav>
+    </header>
+    <section class="main-wrapper">
+        <ul class="product__container" alt="Productos listados" data-list>
+
+        </ul>
+            <form class="upload-product__container" data-form>
+                <fieldset class="upload-product__fieldset">
+                    <legend>Agregar Producto</legend>
+                    <label for="product-title">Nombre</label>
+                    <input required placeholder="Nombre del producto..." type="text" name="product-title" id="product-title" data-title>
+
+                    <label for="category">Categoría</label>
+                    <select name="category" id="category" data-category>
+                        <option>Flor natural</option>
+                        <option>Semillas</option>
+                        <option>Ramo</option>
+                        <option>Arreglo Floral</option>
+                    </select>
+
+                    <label for="if-Ramo">¿Cuántas unidades por ramo?</label>
+                    <input placeholder="Unidades..." min="2"  type="number" id="if-Ramo" data-ramo-quantity>
+
+                    <label for="price">Precio</label>
+                    <input required placeholder="Precio..." type="number" id="price" min="1" data-price>
+
+                    <label for="image">Imagen</label>
+                    <input required placeholder="imagen.png / imagen.jpeg" type="text" id="image" data-image>
+
+                    <input type="file" id="image-file" name="file" accept="image/png, image/jpeg">
+                    <label for="image-file"><i class="fa-solid fa-file-image"></i></label>
+
+                    <div class="form-btn__container">
+                        <button class="upload-product__btn" type="submit">Listo</button>
+                        <button class="clean-form" type="reset">Limpiar</button>
+                    </div>
+                </fieldset>
+            </form>
+            <!-- <ul>
+                <li class="in-cart__item">
+                    <img>
+                    <h3>Producto</h3>
+                    <p>$$$</p>
+                    <button class="delete"><i class="fa-solid fa-trash"></i></button>
+
+                    <div class="quantity-field">
+                        <button class="btn-minus" data-field="quantity">-</button>
+                        <input type="number" step="1" value="1" name="quantity" class="input-quantity">
+                        <button class="btn-plus" data-field="quantity">+</button>
+                    </div>
+                </li>
+            </ul> -->
+    </section>
+    <footer></footer>
+    <script src="./js/script.js"></script>
+    <script src="./js/productScript.js" type="module"></script>
+</body>
+</html>
