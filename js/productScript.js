@@ -34,11 +34,12 @@ export default function createCard(id, title, category, image, price, ramoQuanti
     delBtns.forEach((buttons) => {
         buttons.addEventListener('click', async (ev) => {
             let id = ev.target.closest('[data-id]').dataset.id;
+            console.log(id)
 
             if (id) {
                 try {
                     await connectAPI.deleteProduct(id);
-                    product.remove();
+                    // product.remove();
                 }
                 catch (error) {
                     console.error(`Error al eliminar el producto con id ${id}:`, error);
