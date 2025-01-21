@@ -84,7 +84,7 @@ imageFilePicker.addEventListener('change', (ev) => {
 
 const form = document.querySelector('[data-form]');
 
-function createProduct(event) {
+async function createProduct(event) {
 
     event.preventDefault();
 
@@ -98,7 +98,15 @@ function createProduct(event) {
 
     const ramoQuantity = document.querySelector('[data-ramo-quantity]').value;
 
-    connectAPI.sendNewProduct(title, category, image, price, ramoQuantity)
+    try {
+        const newProduct = await connectAPI.sendNewProduct(title, category, image, price, ramoQuantity);
+        const newCard = createCard(newProduct);
+        list.appendChild(newCard)
+    }
+    catch (error) {
+        console.log(error)
+    }
+
 }
 
 form.addEventListener('submit', event => createProduct(event));
