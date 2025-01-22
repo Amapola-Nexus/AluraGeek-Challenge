@@ -25,67 +25,6 @@ body {
     background-color: var(--clr-100);
 }
 
-.toast{
-    z-index: 5;
-    position: absolute;
-    top: 5rem;
-    left: 1rem;
-    background-color: var(--clr-500);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.856);
-    border-radius: 5px;
-    padding: 1rem;
-    overflow: hidden;
-    transform: translateX(-100%) translateX(-1.1rem);
-    transition: all 0.5s cubic-bezier(0.70, -0.50, 0.165, 1.35);
-}
-
-.toast.active {
-    transform: translateX(0%);
-}
-
-.message {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    .del_text {
-        font-weight: 500;
-    }
-
-    #closeBtnToast {
-        cursor: pointer;
-    }
-}
-
-.toast .progress {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background-color: var(--clr-bg);
-}
-
-.toast .progress::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--highlight-success);
-}
-
-.progress.active:before {
-    animation: progress 2700ms linear forwards;
-}
-
-@keyframes progress {
-    100% {
-        right: 100%;
-    }
-}
-
 .site-header {
     background-color: var(--clr-900);
     width: 100%;
@@ -105,7 +44,7 @@ body {
 
 .main-wrapper {
     width: 100%;
-    height: max-content;
+    min-height: 100dvh;
     padding: 1.5em;
     display: grid;
     grid-template-columns: 1fr auto;
