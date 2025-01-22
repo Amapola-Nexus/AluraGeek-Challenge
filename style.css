@@ -336,6 +336,12 @@ body {
     background-color: #b3b3b3;
 }
 
+footer {
+    padding: 1em .5em;
+    background-color: var(--highlight-900);
+    color: white;
+}
+
 @media screen and (max-width: 600px) {
     .main-wrapper {
         display: flex;
